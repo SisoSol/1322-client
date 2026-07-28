@@ -23,8 +23,13 @@ Not yet published to npm (see [Status](#status) below). Install straight from
 GitHub, which works today:
 
 ```bash
-npm install github:SisoSol/1322-client
+npm install git+https://github.com/SisoSol/1322-client.git
 ```
+
+(The shorter `npm install github:SisoSol/1322-client` form works too, but npm
+resolves it to an SSH git URL by default -- it'll fail with a confusing
+`Permission denied (publickey)` error on any machine without an SSH key
+registered on GitHub. The `git+https://` form above always works.)
 
 Once published to npm:
 
@@ -268,8 +273,8 @@ import { TweetMergeCache, mergeIncomingTweet } from "1322-client";
 ## Status
 
 This package is feature-complete and tested but **not yet published to
-npm** -- install with `npm install github:SisoSol/1322-client` in the
-meantime (see [Install](#install)). The package name is the unscoped
+npm** -- install with `npm install git+https://github.com/SisoSol/1322-client.git`
+in the meantime (see [Install](#install)). The package name is the unscoped
 `1322-client`; a scoped `@1322/client` alias may be published later if a
 `1322` npm organization is set up, but unscoped works today without any
 extra account setup.
