@@ -1,0 +1,67 @@
+{
+  "name": "1322-client",
+  "version": "0.1.0",
+  "description": "Unified TypeScript/JavaScript client for the 1322 real-time social monitoring API (X/Twitter, Truth Social, Instagram, YouTube, Binance Square, News).",
+  "keywords": [
+    "1322",
+    "twitter",
+    "x-api",
+    "truth-social",
+    "instagram",
+    "youtube",
+    "binance-square",
+    "websocket",
+    "real-time",
+    "social-monitoring"
+  ],
+  "license": "MIT",
+  "author": "SisoSol",
+  "homepage": "https://1322.io",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SisoSol/1322-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SisoSol/1322-client/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/ws": "^8.5.13",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^4.1.10"
+  }
+}
